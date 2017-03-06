@@ -52,7 +52,6 @@ export class AppComponent implements OnInit {
   roundDomains = false;
   maxRadius = 10;
   minRadius = 3;
-
   // line interpolation
   curveType: string = 'Linear';
   curve = d3.shape.curveLinear;
@@ -97,6 +96,10 @@ export class AppComponent implements OnInit {
   gaugeValue: number = 50; // linear gauge value
   gaugePreviousValue: number = 70;
 
+  yAxisMinValue = 0;
+  yAxisMaxValue = 7000;
+  goalLine = 6750;
+  goalLineText = 'Monthly Goal';
   constructor() {
     Object.assign(this, {
       single,

@@ -25,6 +25,8 @@ import { YAxisTicksComponent } from './y-axis-ticks.component';
         [showGridLines]="showGridLines"
         [gridLineWidth]="dims.width"
         [height]="dims.height"
+        [goalLine]="goalLine"
+        [goalLineText]="goalLineText"
         (dimensionsChanged)="emitTicksWidth($event)"
       />
 
@@ -50,6 +52,8 @@ export class YAxisComponent implements OnChanges {
   @Input() labelText;
   @Input() yAxisTickInterval;
   @Input() yAxisTickCount: any;
+  @Input() goalLine: any;
+  @Input() goalLineText: any;
   @Output() dimensionsChanged = new EventEmitter();
 
   yAxisClassName: string = 'y axis';

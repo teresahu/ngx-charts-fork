@@ -42,6 +42,24 @@ import { reduceTicks } from './ticks.helper';
           [attr.x2]="gridLineWidth" />
       </svg:g>
     </svg:g>
+    <svg:g *ngIf="goalLine && !showGridLines"
+      [attr.transform]="transform(goalLine)">
+      <svg:g
+        [attr.transform]="gridLineTransform()">
+        <svg:text *ngIf="goalLineText"
+          x1="0"
+          dy="-0.5em"
+          dx="0.75em"
+          class="goalline-text"
+          [attr.x2]="gridLineWidth">
+          {{ goalLineText }}
+        </svg:text>
+        <svg:line
+          class="goalline-path goalline-path-horizontal"
+          x1="0"
+          [attr.x2]="gridLineWidth" />
+      </svg:g>
+    </svg:g>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -56,7 +74,8 @@ export class YAxisTicksComponent implements OnChanges, AfterViewInit {
   @Input() showGridLines = false;
   @Input() gridLineWidth;
   @Input() height;
-
+  @Input() goalLine;
+  @Input() goalLineText;
   @Output() dimensionsChanged = new EventEmitter();
 
   innerTickSize: any = 6;

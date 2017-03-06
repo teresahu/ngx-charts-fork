@@ -296,6 +296,10 @@
         [roundDomains]="roundDomains"
         [curve]="curve"
         [tooltipDisabled]="tooltipDisabled"
+        [goalLine]="goalLine"
+        [goalLineText]="goalLineText"
+        [yAxisMinValue]="yAxisMinValue"
+        [yAxisMaxValue]="yAxisMaxValue"
         (select)="select($event)">
       </ngx-charts-area-chart>
       <ngx-charts-area-chart-stacked
@@ -583,6 +587,22 @@
       <div *ngIf="chart.options.includes('xAxisLabel')">
         <label>X Axis Label:</label><br />
         <input type="text" [(ngModel)]="xAxisLabel"><br />
+      </div>
+      <div *ngIf="chart.options.includes('goalLine')">
+        <label>Goal Line:</label><br />
+        <input type="text" [(ngModel)]="goalLine"><br />
+      </div>
+      <div *ngIf="chart.options.includes('goalLineText')">
+        <label>Goal Line:</label><br />
+        <input type="text" [(ngModel)]="goalLineText"><br />
+      </div>
+      <div *ngIf="chart.options.includes('yAxisMinValue')">
+        <label>yAxis Minimum Value:</label><br />
+        <input type="text" [(ngModel)]="yAxisMinValue"><br />
+      </div>
+      <div *ngIf="chart.options.includes('yAxisMaxValue')">
+        <label>yAxis Maximum Value:</label><br />
+        <input type="text" [(ngModel)]="yAxisMaxValue"><br />
       </div>
       <div *ngIf="chart.options.includes('showYAxisLabel')">
         <label>

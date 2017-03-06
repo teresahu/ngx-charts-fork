@@ -52,6 +52,8 @@ import d3 from '../d3';
           [showLabel]="showYAxisLabel"
           [labelText]="yAxisLabel"
           [tickFormatting]="yAxisTickFormatting"
+          [goalLine]="goalLine"
+          [goalLineText]="goalLineText"
           (dimensionsChanged)="updateYAxisWidth($event)">
         </svg:g>
         <svg:g [attr.clip-path]="clipPath">
@@ -144,6 +146,11 @@ export class AreaChartComponent extends BaseChartComponent {
   @Input() yAxisTickFormatting: any;
   @Input() roundDomains: boolean = false;
   @Input() tooltipDisabled: boolean = false;
+  @Input() yAxisMinValue: any;
+  @Input() yAxisMaxValue: any;
+  @Input() goalLine: any;
+  @Input() goalLineText: any;
+
 
   @Output() activate: EventEmitter<any> = new EventEmitter();
   @Output() deactivate: EventEmitter<any> = new EventEmitter();
@@ -284,9 +291,17 @@ export class AreaChartComponent extends BaseChartComponent {
     }
 
     let min = Math.min(...domain);
-    const max = Math.max(...domain);
+    let max = Math.max(...domain);
     if (!this.autoScale) {
       min = Math.min(0, min);
+    }
+
+    if (this.yAxisMinValue) {
+      min = this.yAxisMinValue;
+    }
+
+    if (this.yAxisMaxValue) {
+      max = this.yAxisMaxValue;
     }
 
     return [min, max];
