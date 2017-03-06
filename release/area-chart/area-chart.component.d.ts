@@ -22,6 +22,10 @@ export declare class AreaChartComponent extends BaseChartComponent {
     yAxisTickFormatting: any;
     roundDomains: boolean;
     tooltipDisabled: boolean;
+    yAxisMinValue: any;
+    yAxisMaxValue: any;
+    goalLine: any;
+    goalLineText: any;
     activate: EventEmitter<any>;
     deactivate: EventEmitter<any>;
     dims: ViewDimensions;

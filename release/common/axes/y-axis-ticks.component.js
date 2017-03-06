@@ -134,7 +134,7 @@ export var YAxisTicksComponent = (function () {
     YAxisTicksComponent.decorators = [
         { type: Component, args: [{
                     selector: 'g[ngx-charts-y-axis-ticks]',
-                    template: "\n    <svg:g #ticksel>\n      <svg:g *ngFor=\"let tick of ticks\" class=\"tick\"\n        [attr.transform]=\"transform(tick)\" >\n        <title>{{tickFormat(tick)}}</title>\n        <svg:text\n          stroke-width=\"0.01\"\n          [attr.dy]=\"dy\"\n          [attr.x]=\"x1\"\n          [attr.y]=\"y1\"\n          [attr.text-anchor]=\"textAnchor\"\n          [style.font-size]=\"'12px'\">\n          {{trimLabel(tickFormat(tick))}}\n        </svg:text>\n      </svg:g>\n    </svg:g>\n    <svg:g *ngFor=\"let tick of ticks\"\n      [attr.transform]=\"transform(tick)\">\n      <svg:g\n        *ngIf=\"showGridLines\"\n        [attr.transform]=\"gridLineTransform()\">\n        <svg:line\n          class=\"gridline-path gridline-path-horizontal\"\n          x1=\"0\"\n          [attr.x2]=\"gridLineWidth\" />\n      </svg:g>\n    </svg:g>\n  ",
+                    template: "\n    <svg:g #ticksel>\n      <svg:g *ngFor=\"let tick of ticks\" class=\"tick\"\n        [attr.transform]=\"transform(tick)\" >\n        <title>{{tickFormat(tick)}}</title>\n        <svg:text\n          stroke-width=\"0.01\"\n          [attr.dy]=\"dy\"\n          [attr.x]=\"x1\"\n          [attr.y]=\"y1\"\n          [attr.text-anchor]=\"textAnchor\"\n          [style.font-size]=\"'12px'\">\n          {{trimLabel(tickFormat(tick))}}\n        </svg:text>\n      </svg:g>\n    </svg:g>\n    <svg:g *ngFor=\"let tick of ticks\"\n      [attr.transform]=\"transform(tick)\">\n      <svg:g\n        *ngIf=\"showGridLines\"\n        [attr.transform]=\"gridLineTransform()\">\n        <svg:line\n          class=\"gridline-path gridline-path-horizontal\"\n          x1=\"0\"\n          [attr.x2]=\"gridLineWidth\" />\n      </svg:g>\n    </svg:g>\n    <svg:g *ngIf=\"goalLine && !showGridLines\"\n      [attr.transform]=\"transform(goalLine)\">\n      <svg:g\n        [attr.transform]=\"gridLineTransform()\">\n        <svg:text *ngIf=\"goalLineText\"\n          x1=\"0\"\n          dy=\"-0.5em\"\n          dx=\"0.75em\"\n          class=\"goalline-text\"\n          [attr.x2]=\"gridLineWidth\">\n          {{ goalLineText }}\n        </svg:text>\n        <svg:line\n          class=\"goalline-path goalline-path-horizontal\"\n          x1=\"0\"\n          [attr.x2]=\"gridLineWidth\" />\n      </svg:g>\n    </svg:g>\n  ",
                     changeDetection: ChangeDetectionStrategy.OnPush
                 },] },
     ];
@@ -150,6 +150,8 @@ export var YAxisTicksComponent = (function () {
         'showGridLines': [{ type: Input },],
         'gridLineWidth': [{ type: Input },],
         'height': [{ type: Input },],
+        'goalLine': [{ type: Input },],
+        'goalLineText': [{ type: Input },],
         'dimensionsChanged': [{ type: Output },],
         'ticksElement': [{ type: ViewChild, args: ['ticksel',] },],
     };

@@ -49,6 +49,12 @@
     stroke: #ddd;
     stroke-width: 1;
     fill: none; }
+  .ngx-charts .goalline-path {
+    stroke: #aaa;
+    stroke-width: 1;
+    fill: none; }
+  .ngx-charts .goalline-text {
+    font-size: 12px; }
   .ngx-charts .grid-panel rect {
     fill: none; }
   .ngx-charts .grid-panel.odd rect {

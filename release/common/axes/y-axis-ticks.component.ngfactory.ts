@@ -38,6 +38,8 @@ export class Wrapper_YAxisTicksComponent {
   /*private*/ _expr_6:any;
   /*private*/ _expr_7:any;
   /*private*/ _expr_8:any;
+  /*private*/ _expr_9:any;
+  /*private*/ _expr_10:any;
   subscription0:any;
   constructor() {
     this._changed = false;
@@ -52,6 +54,8 @@ export class Wrapper_YAxisTicksComponent {
     this._expr_6 = import1.UNINITIALIZED;
     this._expr_7 = import1.UNINITIALIZED;
     this._expr_8 = import1.UNINITIALIZED;
+    this._expr_9 = import1.UNINITIALIZED;
+    this._expr_10 = import1.UNINITIALIZED;
   }
   ngOnDetach(view:import2.AppView<any>,componentView:import2.AppView<any>,el:any):void {
   }
@@ -128,6 +132,22 @@ export class Wrapper_YAxisTicksComponent {
       this.context.height = currValue;
       this._changes['height'] = new import1.SimpleChange(this._expr_8,currValue);
       this._expr_8 = currValue;
+    }
+  }
+  check_goalLine(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_9,currValue))) {
+      this._changed = true;
+      this.context.goalLine = currValue;
+      this._changes['goalLine'] = new import1.SimpleChange(this._expr_9,currValue);
+      this._expr_9 = currValue;
+    }
+  }
+  check_goalLineText(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_10,currValue))) {
+      this._changed = true;
+      this.context.goalLineText = currValue;
+      this._changes['goalLineText'] = new import1.SimpleChange(this._expr_10,currValue);
+      this._expr_10 = currValue;
     }
   }
   ngDoCheck(view:import2.AppView<any>,el:any,throwOnChange:boolean):boolean {
@@ -380,6 +400,128 @@ class View_YAxisTicksComponent2 extends import2.AppView<any> {
     return (null as any);
   }
 }
+class View_YAxisTicksComponent5 extends import2.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  /*private*/ _expr_2:any;
+  /*private*/ _expr_3:any;
+  constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any,declaredViewContainer:import9.ViewContainer) {
+    super(View_YAxisTicksComponent5,renderType_YAxisTicksComponent,import6.ViewType.EMBEDDED,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckAlways,declaredViewContainer);
+    this._expr_2 = import1.UNINITIALIZED;
+    this._expr_3 = import1.UNINITIALIZED;
+  }
+  createInternal(rootSelector:string):import8.ComponentRef<any> {
+    this._el_0 = import3.createRenderElement(this.renderer,(null as any),':svg:text',new import3.InlineArray8(8,'class','goalline-text','dx','0.75em','dy','-0.5em','x1','0'),(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'',(null as any));
+    this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [
+      this._el_0,
+      this._text_1
+    ]
+    ),(null as any));
+    return (null as any);
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const currVal_2:any = this.parentView.parentView.context.gridLineWidth;
+    if (import3.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
+      this.renderer.setElementAttribute(this._el_0,'x2',((currVal_2 == null)? (null as any): currVal_2.toString()));
+      this._expr_2 = currVal_2;
+    }
+    const currVal_3:any = import3.inlineInterpolate(1,'\n          ',this.parentView.parentView.context.goalLineText,'\n        ');
+    if (import3.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
+      this.renderer.setText(this._text_1,currVal_3);
+      this._expr_3 = currVal_3;
+    }
+  }
+  visitRootNodesInternal(cb:any,ctx:any):void {
+    cb(this._el_0,ctx);
+  }
+}
+class View_YAxisTicksComponent4 extends import2.AppView<any> {
+  _el_0:any;
+  _text_1:any;
+  _el_2:any;
+  _text_3:any;
+  _anchor_4:any;
+  /*private*/ _vc_4:import9.ViewContainer;
+  _TemplateRef_4_5:any;
+  _NgIf_4_6:import11.Wrapper_NgIf;
+  _text_5:any;
+  _el_6:any;
+  _text_7:any;
+  _text_8:any;
+  /*private*/ _expr_12:any;
+  /*private*/ _expr_13:any;
+  /*private*/ _expr_14:any;
+  constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any,declaredViewContainer:import9.ViewContainer) {
+    super(View_YAxisTicksComponent4,renderType_YAxisTicksComponent,import6.ViewType.EMBEDDED,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckAlways,declaredViewContainer);
+    this._expr_12 = import1.UNINITIALIZED;
+    this._expr_13 = import1.UNINITIALIZED;
+    this._expr_14 = import1.UNINITIALIZED;
+  }
+  createInternal(rootSelector:string):import8.ComponentRef<any> {
+    this._el_0 = import3.createRenderElement(this.renderer,(null as any),':svg:g',import3.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'\n      ',(null as any));
+    this._el_2 = import3.createRenderElement(this.renderer,this._el_0,':svg:g',import3.EMPTY_INLINE_ARRAY,(null as any));
+    this._text_3 = this.renderer.createText(this._el_2,'\n        ',(null as any));
+    this._anchor_4 = this.renderer.createTemplateAnchor(this._el_2,(null as any));
+    this._vc_4 = new import9.ViewContainer(4,2,this,this._anchor_4);
+    this._TemplateRef_4_5 = new import12.TemplateRef_(this,4,this._anchor_4);
+    this._NgIf_4_6 = new import11.Wrapper_NgIf(this._vc_4.vcRef,this._TemplateRef_4_5);
+    this._text_5 = this.renderer.createText(this._el_2,'\n        ',(null as any));
+    this._el_6 = import3.createRenderElement(this.renderer,this._el_2,':svg:line',new import3.InlineArray4(4,'class','goalline-path goalline-path-horizontal','x1','0'),(null as any));
+    this._text_7 = this.renderer.createText(this._el_2,'\n      ',(null as any));
+    this._text_8 = this.renderer.createText(this._el_0,'\n    ',(null as any));
+    this.init(this._el_0,((<any>this.renderer).directRenderer? (null as any): [
+      this._el_0,
+      this._text_1,
+      this._el_2,
+      this._text_3,
+      this._anchor_4,
+      this._text_5,
+      this._el_6,
+      this._text_7,
+      this._text_8
+    ]
+    ),(null as any));
+    return (null as any);
+  }
+  injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
+    if (((token === import12.TemplateRef) && (4 === requestNodeIndex))) { return this._TemplateRef_4_5; }
+    if (((token === import13.NgIf) && (4 === requestNodeIndex))) { return this._NgIf_4_6.context; }
+    return notFoundResult;
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    const currVal_4_0_0:any = this.parentView.context.goalLineText;
+    this._NgIf_4_6.check_ngIf(currVal_4_0_0,throwOnChange,false);
+    this._NgIf_4_6.ngDoCheck(this,this._anchor_4,throwOnChange);
+    this._vc_4.detectChangesInNestedViews(throwOnChange);
+    const currVal_12:any = this.parentView.context.transform(this.parentView.context.goalLine);
+    if (import3.checkBinding(throwOnChange,this._expr_12,currVal_12)) {
+      this.renderer.setElementAttribute(this._el_0,'transform',((currVal_12 == null)? (null as any): currVal_12.toString()));
+      this._expr_12 = currVal_12;
+    }
+    const currVal_13:any = this.parentView.context.gridLineTransform();
+    if (import3.checkBinding(throwOnChange,this._expr_13,currVal_13)) {
+      this.renderer.setElementAttribute(this._el_2,'transform',((currVal_13 == null)? (null as any): currVal_13.toString()));
+      this._expr_13 = currVal_13;
+    }
+    const currVal_14:any = this.parentView.context.gridLineWidth;
+    if (import3.checkBinding(throwOnChange,this._expr_14,currVal_14)) {
+      this.renderer.setElementAttribute(this._el_6,'x2',((currVal_14 == null)? (null as any): currVal_14.toString()));
+      this._expr_14 = currVal_14;
+    }
+  }
+  destroyInternal():void {
+    this._vc_4.destroyNestedViews();
+  }
+  visitRootNodesInternal(cb:any,ctx:any):void {
+    cb(this._el_0,ctx);
+  }
+  createEmbeddedViewInternal(nodeIndex:number):import2.AppView<any> {
+    if ((nodeIndex == 4)) { return new View_YAxisTicksComponent5(this.viewUtils,this,4,this._anchor_4,this._vc_4); }
+    return (null as any);
+  }
+}
 var renderType_YAxisTicksComponent:import4.RenderComponentType = import3.createRenderComponentType('',0,import5.ViewEncapsulation.None,styles_YAxisTicksComponent,{});
 export class View_YAxisTicksComponent0 extends import2.AppView<import0.YAxisTicksComponent> {
   _viewQuery_ticksel_0:import14.QueryList<any>;
@@ -397,6 +539,11 @@ export class View_YAxisTicksComponent0 extends import2.AppView<import0.YAxisTick
   _TemplateRef_6_5:any;
   _NgFor_6_6:import15.Wrapper_NgFor;
   _text_7:any;
+  _anchor_8:any;
+  /*private*/ _vc_8:import9.ViewContainer;
+  _TemplateRef_8_5:any;
+  _NgIf_8_6:import11.Wrapper_NgIf;
+  _text_9:any;
   constructor(viewUtils:import3.ViewUtils,parentView:import2.AppView<any>,parentIndex:number,parentElement:any) {
     super(View_YAxisTicksComponent0,renderType_YAxisTicksComponent,import6.ViewType.COMPONENT,viewUtils,parentView,parentIndex,parentElement,import7.ChangeDetectorStatus.CheckOnce);
   }
@@ -416,7 +563,12 @@ export class View_YAxisTicksComponent0 extends import2.AppView<import0.YAxisTick
     this._vc_6 = new import9.ViewContainer(6,(null as any),this,this._anchor_6);
     this._TemplateRef_6_5 = new import12.TemplateRef_(this,6,this._anchor_6);
     this._NgFor_6_6 = new import15.Wrapper_NgFor(this._vc_6.vcRef,this._TemplateRef_6_5,this.parentView.injectorGet(import16.IterableDiffers,this.parentIndex),this.ref);
-    this._text_7 = this.renderer.createText(parentRenderNode,'\n  ',(null as any));
+    this._text_7 = this.renderer.createText(parentRenderNode,'\n    ',(null as any));
+    this._anchor_8 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
+    this._vc_8 = new import9.ViewContainer(8,(null as any),this,this._anchor_8);
+    this._TemplateRef_8_5 = new import12.TemplateRef_(this,8,this._anchor_8);
+    this._NgIf_8_6 = new import11.Wrapper_NgIf(this._vc_8.vcRef,this._TemplateRef_8_5);
+    this._text_9 = this.renderer.createText(parentRenderNode,'\n  ',(null as any));
     this._viewQuery_ticksel_0.reset([new import17.ElementRef(this._el_1)]);
     this.context.ticksElement = this._viewQuery_ticksel_0.first;
     this.init((null as any),((<any>this.renderer).directRenderer? (null as any): [
@@ -427,7 +579,9 @@ export class View_YAxisTicksComponent0 extends import2.AppView<import0.YAxisTick
       this._text_4,
       this._text_5,
       this._anchor_6,
-      this._text_7
+      this._text_7,
+      this._anchor_8,
+      this._text_9
     ]
     ),(null as any));
     return (null as any);
@@ -437,6 +591,8 @@ export class View_YAxisTicksComponent0 extends import2.AppView<import0.YAxisTick
     if (((token === import18.NgFor) && (3 === requestNodeIndex))) { return this._NgFor_3_6.context; }
     if (((token === import12.TemplateRef) && (6 === requestNodeIndex))) { return this._TemplateRef_6_5; }
     if (((token === import18.NgFor) && (6 === requestNodeIndex))) { return this._NgFor_6_6.context; }
+    if (((token === import12.TemplateRef) && (8 === requestNodeIndex))) { return this._TemplateRef_8_5; }
+    if (((token === import13.NgIf) && (8 === requestNodeIndex))) { return this._NgIf_8_6.context; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -446,16 +602,22 @@ export class View_YAxisTicksComponent0 extends import2.AppView<import0.YAxisTick
     const currVal_6_0_0:any = this.context.ticks;
     this._NgFor_6_6.check_ngForOf(currVal_6_0_0,throwOnChange,false);
     this._NgFor_6_6.ngDoCheck(this,this._anchor_6,throwOnChange);
+    const currVal_8_0_0:any = (this.context.goalLine && !this.context.showGridLines);
+    this._NgIf_8_6.check_ngIf(currVal_8_0_0,throwOnChange,false);
+    this._NgIf_8_6.ngDoCheck(this,this._anchor_8,throwOnChange);
     this._vc_3.detectChangesInNestedViews(throwOnChange);
     this._vc_6.detectChangesInNestedViews(throwOnChange);
+    this._vc_8.detectChangesInNestedViews(throwOnChange);
   }
   destroyInternal():void {
     this._vc_3.destroyNestedViews();
     this._vc_6.destroyNestedViews();
+    this._vc_8.destroyNestedViews();
   }
   createEmbeddedViewInternal(nodeIndex:number):import2.AppView<any> {
     if ((nodeIndex == 3)) { return new View_YAxisTicksComponent1(this.viewUtils,this,3,this._anchor_3,this._vc_3); }
     if ((nodeIndex == 6)) { return new View_YAxisTicksComponent2(this.viewUtils,this,6,this._anchor_6,this._vc_6); }
+    if ((nodeIndex == 8)) { return new View_YAxisTicksComponent4(this.viewUtils,this,8,this._anchor_8,this._vc_8); }
     return (null as any);
   }
 }

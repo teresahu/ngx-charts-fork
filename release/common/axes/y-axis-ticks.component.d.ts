@@ -9,6 +9,8 @@ export declare class YAxisTicksComponent implements OnChanges, AfterViewInit {
     showGridLines: boolean;
     gridLineWidth: any;
     height: any;
+    goalLine: any;
+    goalLineText: any;
     dimensionsChanged: EventEmitter<{}>;
     innerTickSize: any;
     tickPadding: any;

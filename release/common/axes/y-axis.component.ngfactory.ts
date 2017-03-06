@@ -37,6 +37,8 @@ export class Wrapper_YAxisComponent {
   /*private*/ _expr_5:any;
   /*private*/ _expr_6:any;
   /*private*/ _expr_7:any;
+  /*private*/ _expr_8:any;
+  /*private*/ _expr_9:any;
   subscription0:any;
   constructor() {
     this._changed = false;
@@ -50,6 +52,8 @@ export class Wrapper_YAxisComponent {
     this._expr_5 = import1.UNINITIALIZED;
     this._expr_6 = import1.UNINITIALIZED;
     this._expr_7 = import1.UNINITIALIZED;
+    this._expr_8 = import1.UNINITIALIZED;
+    this._expr_9 = import1.UNINITIALIZED;
   }
   ngOnDetach(view:import2.AppView<any>,componentView:import2.AppView<any>,el:any):void {
   }
@@ -118,6 +122,22 @@ export class Wrapper_YAxisComponent {
       this.context.yAxisTickCount = currValue;
       this._changes['yAxisTickCount'] = new import1.SimpleChange(this._expr_7,currValue);
       this._expr_7 = currValue;
+    }
+  }
+  check_goalLine(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_8,currValue))) {
+      this._changed = true;
+      this.context.goalLine = currValue;
+      this._changes['goalLine'] = new import1.SimpleChange(this._expr_8,currValue);
+      this._expr_8 = currValue;
+    }
+  }
+  check_goalLineText(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_9,currValue))) {
+      this._changed = true;
+      this.context.goalLineText = currValue;
+      this._changes['goalLineText'] = new import1.SimpleChange(this._expr_9,currValue);
+      this._expr_9 = currValue;
     }
   }
   ngDoCheck(view:import2.AppView<any>,el:any,throwOnChange:boolean):boolean {
@@ -300,6 +320,10 @@ export class View_YAxisComponent0 extends import2.AppView<import0.YAxisComponent
     this._YAxisTicksComponent_3_3.check_gridLineWidth(currVal_3_0_6,throwOnChange,false);
     const currVal_3_0_7:any = this.context.dims.height;
     this._YAxisTicksComponent_3_3.check_height(currVal_3_0_7,throwOnChange,false);
+    const currVal_3_0_8:any = this.context.goalLine;
+    this._YAxisTicksComponent_3_3.check_goalLine(currVal_3_0_8,throwOnChange,false);
+    const currVal_3_0_9:any = this.context.goalLineText;
+    this._YAxisTicksComponent_3_3.check_goalLineText(currVal_3_0_9,throwOnChange,false);
     if (this._YAxisTicksComponent_3_3.ngDoCheck(this,this._el_3,throwOnChange)) { this.compView_3.markAsCheckOnce(); }
     const currVal_5_0_0:any = this.context.showLabel;
     this._NgIf_5_6.check_ngIf(currVal_5_0_0,throwOnChange,false);
