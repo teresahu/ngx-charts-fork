@@ -70,6 +70,17 @@
     fill: none;
   }
 
+  .goalline-path {
+    stroke: #aaa;
+    stroke-width: 1;
+    fill: none;
+  }
+
+  .goalline-text {
+    font-size: 13px;
+    opacity: 0.4;
+  }
+
   .grid-panel {
     rect {
       fill: none;

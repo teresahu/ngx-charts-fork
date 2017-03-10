@@ -69,6 +69,10 @@ export class Wrapper_AreaChartComponent {
   /*private*/ _expr_20:any;
   /*private*/ _expr_21:any;
   /*private*/ _expr_22:any;
+  /*private*/ _expr_23:any;
+  /*private*/ _expr_24:any;
+  /*private*/ _expr_25:any;
+  /*private*/ _expr_26:any;
   subscription0:any;
   subscription1:any;
   subscription2:any;
@@ -99,6 +103,10 @@ export class Wrapper_AreaChartComponent {
     this._expr_20 = import1.UNINITIALIZED;
     this._expr_21 = import1.UNINITIALIZED;
     this._expr_22 = import1.UNINITIALIZED;
+    this._expr_23 = import1.UNINITIALIZED;
+    this._expr_24 = import1.UNINITIALIZED;
+    this._expr_25 = import1.UNINITIALIZED;
+    this._expr_26 = import1.UNINITIALIZED;
   }
   ngOnDetach(view:import2.AppView<any>,componentView:import2.AppView<any>,el:any):void {
   }
@@ -292,6 +300,38 @@ export class Wrapper_AreaChartComponent {
       this._expr_22 = currValue;
     }
   }
+  check_yAxisMinValue(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_23,currValue))) {
+      this._changed = true;
+      this.context.yAxisMinValue = currValue;
+      this._changes['yAxisMinValue'] = new import1.SimpleChange(this._expr_23,currValue);
+      this._expr_23 = currValue;
+    }
+  }
+  check_yAxisMaxValue(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_24,currValue))) {
+      this._changed = true;
+      this.context.yAxisMaxValue = currValue;
+      this._changes['yAxisMaxValue'] = new import1.SimpleChange(this._expr_24,currValue);
+      this._expr_24 = currValue;
+    }
+  }
+  check_goalLine(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_25,currValue))) {
+      this._changed = true;
+      this.context.goalLine = currValue;
+      this._changes['goalLine'] = new import1.SimpleChange(this._expr_25,currValue);
+      this._expr_25 = currValue;
+    }
+  }
+  check_goalLineText(currValue:any,throwOnChange:boolean,forceUpdate:boolean):void {
+    if ((forceUpdate || import3.checkBinding(throwOnChange,this._expr_26,currValue))) {
+      this._changed = true;
+      this.context.goalLineText = currValue;
+      this._changes['goalLineText'] = new import1.SimpleChange(this._expr_26,currValue);
+      this._expr_26 = currValue;
+    }
+  }
   ngDoCheck(view:import2.AppView<any>,el:any,throwOnChange:boolean):boolean {
     var changed:any = this._changed;
     this._changed = false;
@@ -460,6 +500,10 @@ class View_AreaChartComponent2 extends import2.AppView<any> {
     this._YAxisComponent_0_3.check_showLabel(currVal_0_0_4,throwOnChange,false);
     const currVal_0_0_5:any = this.parentView.context.yAxisLabel;
     this._YAxisComponent_0_3.check_labelText(currVal_0_0_5,throwOnChange,false);
+    const currVal_0_0_6:any = this.parentView.context.goalLine;
+    this._YAxisComponent_0_3.check_goalLine(currVal_0_0_6,throwOnChange,false);
+    const currVal_0_0_7:any = this.parentView.context.goalLineText;
+    this._YAxisComponent_0_3.check_goalLineText(currVal_0_0_7,throwOnChange,false);
     if (this._YAxisComponent_0_3.ngDoCheck(this,this._el_0,throwOnChange)) { this.compView_0.markAsCheckOnce(); }
     this.compView_0.internalDetectChanges(throwOnChange);
   }
